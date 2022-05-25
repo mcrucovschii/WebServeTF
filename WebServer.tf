@@ -18,7 +18,7 @@ resource "aws_instance" "WebServer" {
 yum -y update
 yum -y install httpd
 myip='curl http://169.254.169.254/latest/meta-data/local-ipv4'
-echo "<h2>WebServer with ip: $myip</h2><br>Build by Terraform" > /var/www/html/index.html_url
+echo "<h2>WebServer with ip: $myip</h2><br>Build by Terraform" > /var/www/html/index.html
 sudo service httpd start
 chkconfig httpd on
 EOF
@@ -51,8 +51,8 @@ resource "aws_security_group" "WebServerSG" {
     ipv6_cidr_blocks = ["::/0"]
   }
   ingress {
-    from_port        = 443
-    to_port          = 443
+    from_port        = 22
+    to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
