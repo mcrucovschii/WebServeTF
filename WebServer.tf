@@ -66,6 +66,6 @@ resource "aws_security_group" "WebServerSG" {
     ipv6_cidr_blocks = ["::/0"]
   }
   tags = {
-    Name = "Web Server Apache"
+    Name = "WebServerApacheSG"
   }
 }
