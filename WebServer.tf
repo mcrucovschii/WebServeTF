@@ -4,10 +4,6 @@
 # Build WebServer at bootstrap_action
 #----------------------------------------------
 
-provider "aws" {
-  regions = "us-west-1"
-}
-
 #resource "aws_vpc" "Main" {
 #  cidr_block = "10.0.0.0/16"
 #}

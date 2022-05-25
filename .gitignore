@@ -1,0 +1,9 @@
+# Lock files
+*.hcl
+
+# Directories
+.terraform/
+
+# Keys
+*.pem
+*.ppk
