@@ -9,7 +9,7 @@
 #}
 
 resource "aws_instance" "WebServer" {
-  ami                    = "ami-02541b8af977f6cdd" # Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2
+  ami                    = data.aws_ami.fresh_amazon_linux.id # Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.WebServerSG.id]
   key_name               = "MaxKeyPair"
