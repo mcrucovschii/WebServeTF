@@ -21,3 +21,7 @@ output "data_aws_regions_name" {
 output "aws_vpcs" {
   value = data.vpcs.current.ids
 }
+
+output "latest_amazon_linux_id" {
+  value = data.aws_ami.fresh_amazon_linux.id
+}
