@@ -4,9 +4,15 @@
 # Build WebServer at bootstrap_action
 #----------------------------------------------
 
-#resource "aws_vpc" "Main" {
-#  cidr_block = "10.0.0.0/16"
-#}
+/*
+resource "aws_vpc" "prod_vpc" {
+  cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_subnet" "subnet-1" {
+  vpc_id     = aws_vpc.prod_vpc.id
+  cidr_block = "10.0.1.0/24"
+}*/
 
 resource "aws_instance" "WebServer" {
   ami                    = data.aws_ami.fresh_amazon_linux.id # Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2
