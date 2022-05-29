@@ -4,11 +4,6 @@
 # Build WebServer at bootstrap_action
 #----------------------------------------------
 
-/*
-resource "aws_vpc" "prod_vpc" {
-  cidr_block = "10.0.0.0/16"
-}
-*/
 
 resource "aws_default_vpc" "default" {}
 
@@ -18,29 +13,6 @@ resource "aws_subnet" "subnet1" {
   cidr_block        = cidrsubnet(aws_default_vpc.default.cidr_block, 4, 1)
   tags = {
     Name = "subnet-1"
-  }
-}
-
-resource "aws_instance" "WebServer" {
-  ami                         = data.aws_ami.fresh_amazon_linux.id # Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2
-  instance_type               = var.instance_type
-  vpc_security_group_ids      = [aws_security_group.WebServerSG.id]
-  availability_zone           = data.aws_availability_zones.available.names[0]
-  key_name                    = var.key_max_name #"MaxKeyPairDel"
-  subnet_id                   = aws_subnet.subnet1.id
-  associate_public_ip_address = true
-  # vpc
-  user_data = <<EOF
-#!/bin/bash
-yum -y update
-yum -y install httpd
-myip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
-echo "<h2>WebServer with ip: $myip </h2><br>Build by Terraform" > /var/www/html/index.html
-sudo service httpd start
-chkconfig httpd on
-EOF
-  tags = {
-    Name = "Web Server Apache"
   }
 }
 
@@ -68,5 +40,27 @@ resource "aws_security_group" "WebServerSG" {
   }
   tags = {
     Name = "WebServerApacheSG"
+  }
+}
+
+resource "aws_instance" "WebServer" {
+  ami                         = data.aws_ami.fresh_amazon_linux.id # Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2
+  instance_type               = var.instance_type
+  vpc_security_group_ids      = [aws_security_group.WebServerSG.id]
+  availability_zone           = data.aws_availability_zones.available.names[0]
+  key_name                    = var.key_max_name #"MaxKeyPairDel"
+  subnet_id                   = aws_subnet.subnet1.id
+  associate_public_ip_address = true
+  user_data                   = <<EOF
+#!/bin/bash
+yum -y update
+yum -y install httpd
+myip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
+echo "<h2>WebServer with ip: $myip </h2><br>Build by Terraform" > /var/www/html/index.html
+sudo service httpd start
+chkconfig httpd on
+EOF
+  tags = {
+    Name = "Web Server Apache"
   }
 }
