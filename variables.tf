@@ -2,7 +2,9 @@
 # Apache Web Server
 #
 # Build WebServer at bootstrap_action
-# terraform.tfvars = default values of variables
+# variables.tf = declaration of variables
 #----------------------------------------------
 
-region = "us-west-1"
+variable "region" {
+  description = "Please, enter AWS region"
+}

@@ -9,4 +9,8 @@ export AWS_SECRET_ACCESS_KEY=""
 # Deploy!
 terraform apply --auto-approve
 
+# Destroy
+terraform destroy
+
+
 It will display deployed WebServer ARN.
