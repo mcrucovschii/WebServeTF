@@ -10,6 +10,10 @@ variable "region" {
 }
 
 variable "instance_type" {
-  description = "Please, enter instance type"
-  default     = "t2.micro"
+  default = "t2.micro"
+}
+
+variable "allowed_ports" {
+  type    = list(any)
+  default = ["22", "80", "443", "8080"]
 }
