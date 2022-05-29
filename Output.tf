@@ -9,6 +9,7 @@ output "webserver_public_dns" {
 
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
+data "aws_availability_zones" "available" {}
 data "aws_ami" "fresh_amazon_linux" {
   owners      = ["amazon"]
   most_recent = true
