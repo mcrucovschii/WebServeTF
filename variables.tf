@@ -13,7 +13,11 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "key_max_name" {
+  default = "MaxKeyPair"
+}
+
 variable "allowed_ports" {
   type    = list(any)
-  default = ["22", "80", "443", "8080"]
+  default = ["22", "80"]
 }
