@@ -18,8 +18,6 @@ resource "aws_subnet" "subnet1" {
 
 resource "aws_security_group" "WebServerSG" {
   name = "Web Server Security Group"
-  # vpc_id      = aws_vpc.main.id
-
   dynamic "ingress" {
     for_each = var.allowed_ports
     content {

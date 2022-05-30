@@ -1,8 +1,8 @@
 #-----------------------------------------------
 # Apache Web Server
 #
-# Build WebServer at bootstrap_action
-# variables.tf = declaration of variables
+# Build by Terraform
+# Main deployment module 
 #----------------------------------------------
 
 variable "region" {

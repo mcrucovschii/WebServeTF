@@ -1,4 +1,9 @@
-# Output data
+#-----------------------------------------------
+# Apache Web Server
+#
+# Build WebServer at bootstrap_action
+# define and output data
+#----------------------------------------------
 
 output "webserver_instance_id" {
   value = aws_instance.WebServer.id

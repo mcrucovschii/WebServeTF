@@ -1,7 +1,8 @@
 #-----------------------------------------------
 # Apache Web Server
 #
-# Build WebServer at bootstrap_action
+# Build WebServer with bootstrap_action
+# can we be used for mass deployment
 # maim.tf
 #----------------------------------------------
 
