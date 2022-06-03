@@ -8,7 +8,7 @@ sudo python ./amazon-linux-cis
 sudo yum install gcc pcre-devel tar make -y
 sudo echo "install gc" >> /tmp/max-user-data.log
 sudo wget http://www.haproxy.org/download/2.6/src/haproxy-2.6.0.tar.gz -O /root/haproxy.tar.gz
-sudo tar -xvf /root/haproxy.tar.gz
+sudo tar -xvf /root/haproxy.tar.gz -C /root
 sudo cd /root/haproxy-2.6.0
 sudo make TARGET=linux-glibc
 sudo make install
