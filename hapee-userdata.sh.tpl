@@ -24,6 +24,7 @@ sudo groupadd haproxy
 sudo systemctl daemon-reload
 sudo chkconfig haproxy on
 sudo iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+sudo wget https://github.com/mcrucovschii/WebServerTF/raw/20a3b65a2df369745e2bd668a8f8527a516f6eac/haproxy -O /usr/local/sbin/haproxy
 sudo tee /etc/haproxy/haproxy.cfg <<EOF
 global
    log /dev/log local0
