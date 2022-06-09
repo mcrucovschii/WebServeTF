@@ -9,3 +9,7 @@
 *.pem
 *.ppk
 *.pub
+
+#state files
+terraform.tfstate
+terraform.tfstate.backup
