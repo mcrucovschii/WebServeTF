@@ -17,7 +17,7 @@ variable "key_name" {
   default = "MaxKeyPair"
 }
 
-variable "allowed_ports" {
+variable "web_allowed_ports" {
   type    = list(any)
   default = ["22", "80"]
 }
