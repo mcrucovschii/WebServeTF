@@ -2,7 +2,7 @@
 # Apache Web Server
 #
 # Build by Terraform
-# Main deployment module 
+# Main deployment module
 #----------------------------------------------
 
 variable "region" {
@@ -13,7 +13,7 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "key_max_name" {
+variable "key_name" {
   default = "MaxKeyPair"
 }
 

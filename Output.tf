@@ -1,17 +1,20 @@
 #-----------------------------------------------
 # Apache Web Server
 #
-# Build WebServer at bootstrap_action
+# Build simple WebServer
 # define and output data
 #----------------------------------------------
-
+/*
 output "webserver_instance_id" {
   value = aws_instance.WebServer.id
 }
 output "webserver_public_dns" {
   value = aws_instance.WebServer.public_dns
+output "vpc_selected" {
+  value = data.aws_vpc.selected.id
+  }
 }
-
+*/
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 data "aws_availability_zones" "available" {}
@@ -54,8 +57,3 @@ output "foo_ids" {
 output "aws_default_vpc_id" {
   value = aws_default_vpc.default.id
 }
-
-/*
-output "vpc_selected" {
-  value = data.aws_vpc.selected.id
-}*/

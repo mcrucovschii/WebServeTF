@@ -1,6 +1,4 @@
-Build WebServer with bootstrap_action
-
-Using Terraform to build out Apache WebServer at AWS
+Build simple WebServer
 
 # Enter your AWS credentials
 export AWS_ACCESS_KEY_ID=""\
@@ -12,5 +10,4 @@ terraform apply --auto-approve
 # Destroy
 terraform destroy
 
-
-It will display deployed WebServer ARN.
+GL2U!
