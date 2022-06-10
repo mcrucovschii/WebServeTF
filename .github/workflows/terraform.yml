@@ -44,8 +44,6 @@
 
 name: 'Terraform'
 env:
-  AWS_ACCESS_KEY_ID : "AKIAZJSPOPLEHG3XCEFQ"
-  AWS_SECRET_ACCESS_KEY : "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"
   AWS_DEFAULT_REGION : "eu-central-1"
 
 on:
