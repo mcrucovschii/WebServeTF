@@ -87,7 +87,7 @@ jobs:
       
     # List  
     - name: List
-      run: ls - la
+      run: ls -la
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
