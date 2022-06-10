@@ -9,7 +9,7 @@
 provider "aws" {
   region = var.region
   credentials "app.terraform.io" {
-    token = "L6AAozApBakm2Q.atlasv1.6SjPzfyPurBdB5eFUkS4uLUwAtaS5h1DB1yIifQ1knmYfTgd3aXZXp0oZEMyOJ8I6j8"
+    token = "xxxxxxxxxxxxxxxxxxxxx"
   }
 }
 terraform {
@@ -20,11 +20,10 @@ terraform {
       name = "gh-actions-demo"
     }
   }
-  /*
   required_providers {
     aws = {
       source = "hashicorp/aws"
 
     }
-  }*/
+  }
 }
