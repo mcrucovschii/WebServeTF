@@ -16,16 +16,15 @@ terraform {
 
   cloud {
     organization = "EasyBreeze"
-
     workspaces {
       name = "gh-actions-demo"
     }
   }
-
+  /*
   required_providers {
     aws = {
       source = "hashicorp/aws"
 
     }
-  }
+  }*/
 }
