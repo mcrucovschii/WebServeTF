@@ -9,7 +9,7 @@
 provider "aws" {
   region = var.region
   credentials "app.terraform.io" {
-    token = "xxxxxx.atlasv1.zzzzzzzzzzzzz"
+    token = "L6AAozApBakm2Q.atlasv1.6SjPzfyPurBdB5eFUkS4uLUwAtaS5h1DB1yIifQ1knmYfTgd3aXZXp0oZEMyOJ8I6j8"
   }
 }
 terraform {
