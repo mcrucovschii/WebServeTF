@@ -12,8 +12,8 @@ provider "aws" {
     token = "xxxxxxxxxxxxxxxxxxxxx"
   }
 }
+/*
 terraform {
-
   cloud {
     organization = "EasyBreeze"
     workspaces {
@@ -25,5 +25,5 @@ terraform {
       source = "hashicorp/aws"
 
     }
-  }
+  }*/
 }
