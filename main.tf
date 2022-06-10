@@ -8,9 +8,9 @@
 
 provider "aws" {
   region = var.region
-  credentials "app.terraform.io" {
-    token = "xxxxxxxxxxxxxxxxxxxxx"
-  }
+  #credentials "app.terraform.io" {
+  #  token = "xxxxxxxxxxxxxxxxxxxxx"
+  #}
 }
 /*
 terraform {
