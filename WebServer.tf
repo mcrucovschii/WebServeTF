@@ -4,7 +4,6 @@
 # Build WebServer at bootstrap_action
 #----------------------------------------------
 
-
 resource "aws_default_vpc" "default" {}
 
 resource "aws_subnet" "subnet1" {
