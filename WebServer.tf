@@ -1,7 +1,7 @@
 #-----------------------------------------------
 # Apache Web Server
 #
-# Build WebServer at bootstrap_action
+# Build WebServer with httpd bootstrap action
 #----------------------------------------------
 #
 
@@ -48,16 +48,6 @@ resource "aws_instance" "WebServer" {
   subnet_id                   = aws_subnet.subnet1.id
   associate_public_ip_address = true
   user_data                   = file("tf-app-server-script.sh")
-  /*
-  user_data                   = <<EOF
-#!/bin/bash
-sudo yum -y update
-sudo yum -y install httpd
-myip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
-echo "<h2>WebServer with ip: $myip </h2><br>Build by Terraform" > /var/www/html/index.html
-sudo service httpd start
-chkconfig httpd on
-EOF*/
   tags = {
     Name = "Web Server "
   }
